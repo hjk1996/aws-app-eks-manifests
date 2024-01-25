@@ -1,12 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: ui
-  namespace: ui
+  name: nginx
+  namespace: default
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/healthcheck-path: /actuator/health/liveness
+    alb.ingress.kubernetes.io/group.name: app-group
 spec:
   ingressClassName: alb
   rules:
@@ -16,6 +17,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ui
+            name: nginx-service
             port:
               number: 80
