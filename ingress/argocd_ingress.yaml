@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+    alb.ingress.kubernetes.io/group.name: argo-group
+    alb.ingress.kubernetes.io/group.order: '1'
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
+    alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
+    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:109412806537:certificate/6f2874c6-4aa0-40d3-a255-868b1f64442e
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+  name: argocd-ingress
+  namespace: argocd
+spec:
+  ingressClassName: alb
+  rules:
+   - http:
+      paths:
+      - backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
