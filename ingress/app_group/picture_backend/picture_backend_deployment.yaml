@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: picture-backend-deployment
+  name: picture-backend-deployment
+  namespace: picture-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: picture-backend-deployment
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: picture-backend-deployment
+    spec:
+      serviceAccountName: picture-backend-service-account
+      containers:
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:15.0
+        name: picture-backend
