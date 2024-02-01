@@ -6,7 +6,7 @@ metadata:
   name: auth-deployment
   namespace: auth
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: auth-deployment
