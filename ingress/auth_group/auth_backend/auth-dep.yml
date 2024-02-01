@@ -18,7 +18,7 @@ spec:
       serviceAccountName: auth-backend-service-account
       containers:
       - name: auth-container
-        image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app_cognito_auth:2
+        image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app_cognito_auth:3
         ports:
         - containerPort: 4000
         env:
