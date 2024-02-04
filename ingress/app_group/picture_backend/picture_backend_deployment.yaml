@@ -21,6 +21,10 @@ spec:
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:23.0
         name: picture-backend
-        env:
-        - name: BUCKET_NAME
-          value: rapa-app-image-bucket
+        envFrom:
+        - secretRef:
+            name: picture-backend-secret
+        
+
+
+
