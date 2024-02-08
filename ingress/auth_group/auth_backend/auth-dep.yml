@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: auth-deployment
+  name: auth-deployment
+  namespace: auth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: auth-deployment
+  template:
+    metadata:
+      labels:
+        app: auth-deployment
+    spec:
+      serviceAccountName: auth-backend-service-account
+      containers:
+      - name: auth-container
+        image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app_cognito_auth:14
+        ports:
+        - containerPort: 4000
+        env:
+        - name: userPoolId
+          value: "us-east-1_4kv4854BU"
+        - name: clientId
+          value: "62asu08r3nu7h2l79vkbhee41b"
+        
+
