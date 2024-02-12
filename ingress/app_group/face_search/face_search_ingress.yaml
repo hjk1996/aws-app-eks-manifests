@@ -9,7 +9,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/manage-backend-security-group-rules: "true"
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:109412806537:certificate/6f2874c6-4aa0-40d3-a255-868b1f64442e
-    alb.ingress.kubernetes.io/healthcheck-port: "80"
+    alb.ingress.kubernetes.io/healthcheck-port: "8000"
     alb.ingress.kubernetes.io/success-codes: 200,201
     alb.ingress.kubernetes.io/healthcheck-path: /search/faces/health_check
     alb.ingress.kubernetes.io/healthy-threshold-count: "2"
@@ -27,4 +27,4 @@ spec:
               service:
                 name: face-search-service
                 port:
-                  number: 80          
+                  number: 80
