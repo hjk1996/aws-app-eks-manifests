@@ -21,5 +21,6 @@ spec:
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:13
         name: face-search
-      
+      ports:
+      - containerPort: 8000
         
