@@ -13,7 +13,6 @@ metadata:
     alb.ingress.kubernetes.io/success-codes: 200,201
     alb.ingress.kubernetes.io/healthcheck-path: /search/faces/health_check
     alb.ingress.kubernetes.io/healthy-threshold-count: "2"
-
     nginx.ingress.kubernetes.io/backend-protocol: HTTP
   name: face-search-ingress
   namespace: face-search
@@ -29,3 +28,11 @@ spec:
                 name: face-search-service
                 port:
                   number: 80
+          - path: /search/faces/health_check
+            pathType: Prefix
+            backend:
+              service:
+                name: face-search-service
+                port:
+                  number: 80
+          
