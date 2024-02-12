@@ -27,12 +27,4 @@ spec:
               service:
                 name: face-search-service
                 port:
-                  number: 80
-          - path: /search/faces/health_check
-            pathType: Prefix
-            backend:
-              service:
-                name: face-search-service
-                port:
-                  number: 80
-          
+                  number: 80          
