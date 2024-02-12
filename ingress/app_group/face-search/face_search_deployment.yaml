@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: face-search-deployment
+  name: face-search-deployment
+  namespace: face-search
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: face-search-deployment
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: face-search-deployment
+    spec:
+      serviceAccountName: face-search-service-account
+      containers:
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:7
+        name: face-search
+      
+        
