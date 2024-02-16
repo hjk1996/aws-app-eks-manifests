@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccountName: picture-backend-service-account
       containers:
-      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:78
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:79
         name: picture-backend
         envFrom:
         - secretRef:
