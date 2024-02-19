@@ -1,0 +1,86 @@
+apiVersion: karpenter.k8s.aws/v1beta1
+kind: EC2NodeClass
+metadata:
+  annotations:
+    karpenter.k8s.aws/ec2nodeclass-hash: "4988305050712923063"
+  creationTimestamp: "2024-01-28T13:54:08Z"
+  finalizers:
+  - karpenter.k8s.aws/termination
+  generation: 1
+  name: default
+  resourceVersion: "7859007"
+  uid: 3122a146-3936-4f31-b7bd-3a8b8a484633
+spec:
+  amiFamily: AL2
+  metadataOptions:
+    httpEndpoint: enabled
+    httpProtocolIPv6: disabled
+    httpPutResponseHopLimit: 2
+    httpTokens: required
+  role: KarpenterNodeRole-app-eks
+  securityGroupSelectorTerms:
+  - tags:
+      karpenter.sh/discovery: app-eks
+  subnetSelectorTerms:
+  - tags:
+      karpenter.sh/discovery: app-eks
+status:
+  amis:
+  - id: ami-0841f4d794c8888a2
+    name: amazon-eks-arm64-node-1.29-v20240213
+    requirements:
+    - key: kubernetes.io/arch
+      operator: In
+      values:
+      - arm64
+    - key: karpenter.k8s.aws/instance-gpu-count
+      operator: DoesNotExist
+    - key: karpenter.k8s.aws/instance-accelerator-count
+      operator: DoesNotExist
+  - id: ami-0f542ab99cf2b3da3
+    name: amazon-eks-gpu-node-1.29-v20240213
+    requirements:
+    - key: kubernetes.io/arch
+      operator: In
+      values:
+      - amd64
+    - key: karpenter.k8s.aws/instance-gpu-count
+      operator: Exists
+  - id: ami-0f542ab99cf2b3da3
+    name: amazon-eks-gpu-node-1.29-v20240213
+    requirements:
+    - key: kubernetes.io/arch
+      operator: In
+      values:
+      - amd64
+    - key: karpenter.k8s.aws/instance-accelerator-count
+      operator: Exists
+  - id: ami-061821f70393c7d78
+    name: amazon-eks-node-1.29-v20240213
+    requirements:
+    - key: kubernetes.io/arch
+      operator: In
+      values:
+      - amd64
+    - key: karpenter.k8s.aws/instance-gpu-count
+      operator: DoesNotExist
+    - key: karpenter.k8s.aws/instance-accelerator-count
+      operator: DoesNotExist
+  instanceProfile: app-eks_15843455441266977890
+  securityGroups:
+  - id: sg-0798a924ac701a737
+    name: app-eks-node-20240128125903441200000007
+  subnets:
+  - id: subnet-051ce987f26767139
+    zone: us-east-1a
+  - id: subnet-02621baa5335f1ba4
+    zone: us-east-1b
+  blockDeviceMappings:
+  - deviceName: /dev/xvda
+    ebs:
+      volumeSize: 200Gi
+      volumeType: gp3
+      iops: 3000
+      encrypted: true
+      deleteOnTermination: true
+      throughput: 150
