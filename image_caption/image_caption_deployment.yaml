@@ -18,7 +18,7 @@ spec:
     spec:
       serviceAccountName: image-caption-service-account
       containers:
-      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:10
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:11
         name: image-caption
         env:
         - name: SQS_URL
