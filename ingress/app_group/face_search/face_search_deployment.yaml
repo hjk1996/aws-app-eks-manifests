@@ -7,7 +7,7 @@ metadata:
   name: face-search-deployment
   namespace: face-search
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: face-search-deployment
