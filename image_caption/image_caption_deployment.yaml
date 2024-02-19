@@ -17,6 +17,13 @@ spec:
         app: image-caption-deployment
     spec:
       serviceAccountName: image-caption-service-account
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: "kubernetes.io/hostname"
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels:
+            app: image-caption-deployment
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:14
         name: image-caption
