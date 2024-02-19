@@ -6,7 +6,7 @@ metadata:
   name: image-caption-deployment
   namespace: image-caption
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: image-caption-deployment
