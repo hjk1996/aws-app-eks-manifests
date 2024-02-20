@@ -32,4 +32,6 @@ spec:
           value: https://sqs.us-east-1.amazonaws.com/109412806537/image-caption-queue
         - name: DYNAMODB_TABLE_NAME
           value: AppImageCaption
+        - name: QUEUE_NAME
+          value: image-caption-queue
             
