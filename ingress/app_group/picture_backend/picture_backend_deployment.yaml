@@ -1,7 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  creationTimestamp: null
   labels:
     app: picture-backend-deployment
   name: picture-backend-deployment
@@ -13,15 +12,20 @@ spec:
       app: picture-backend-deployment
   template:
     metadata:
-      creationTimestamp: null
       labels:
         app: picture-backend-deployment
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels: 
+            app: picture-backend-deployment
       serviceAccountName: picture-backend-service-account
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:84
         name: picture-backend
         envFrom:
         - secretRef:
-            name: picture-backend-secret
-        
+            name: picture-backend-secret 
