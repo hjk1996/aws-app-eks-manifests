@@ -27,8 +27,12 @@ spec:
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:32
         name: image-caption
+        resources:
+          requests:
+            memory: "2.5Gi"
         env:
         - name: SQS_URL
           value: https://sqs.us-east-1.amazonaws.com/109412806537/image-caption-queue
         - name: DYNAMODB_TABLE_NAME
           value: AppImageCaption
+      
