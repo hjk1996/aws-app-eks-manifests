@@ -25,7 +25,7 @@ spec:
           matchLabels:
             app: image-caption-deployment
       containers:
-      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:24
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:25
         name: image-caption
         env:
         - name: SQS_URL
