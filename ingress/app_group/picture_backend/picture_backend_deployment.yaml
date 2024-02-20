@@ -15,6 +15,13 @@ spec:
       labels:
         app: picture-backend-deployment
     spec:
+      topologySpreadConstraints:
+      - maxSkew: 1
+        topologyKey: kubernetes.io/hostname
+        whenUnsatisfiable: ScheduleAnyway
+        labelSelector:
+          matchLabels: 
+            app: picture-backend-deployment
       serviceAccountName: picture-backend-service-account
       containers:
       - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:78
