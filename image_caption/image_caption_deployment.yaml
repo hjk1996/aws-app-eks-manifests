@@ -30,12 +30,12 @@ spec:
         resources:
           requests:
             memory: "3.0Gi"
-            cpu: "1000m"
+            cpu: "500m"
         env:
         - name: SQS_URL
           value: https://sqs.us-east-1.amazonaws.com/109412806537/image-caption-queue
         - name: DYNAMODB_TABLE_NAME
           value: AppImageMetadata
         - name: OPENSEARCH_ENDPOINT
-          value: https://cr8og5neebyn36th35nk.us-east-1.aoss.amazonaws.com
+          value: https://r2a3mou8j4n8wnvwmtlh.us-east-1.aoss.amazonaws.com
       
