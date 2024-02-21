@@ -36,4 +36,8 @@ spec:
           value: https://sqs.us-east-1.amazonaws.com/109412806537/image-caption-queue
         - name: DYNAMODB_TABLE_NAME
           value: AppImageMetadata
+        - name: OPENSEARCH_ENDPOINT
+          value: https://5pmqemvn6b1li4yn88nk.us-east-1.aoss.amazonaws.com
+        - name: AWS_REGION
+          value: us-east-1
       
