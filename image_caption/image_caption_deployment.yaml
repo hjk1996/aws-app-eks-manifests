@@ -37,5 +37,5 @@ spec:
         - name: DYNAMODB_TABLE_NAME
           value: AppImageMetadata
         - name: OPENSEARCH_ENDPOINT
-          value: https://5pmqemvn6b1li4yn88nk.us-east-1.aoss.amazonaws.com
+          value: https://cr8og5neebyn36th35nk.us-east-1.aoss.amazonaws.com
       
