@@ -25,13 +25,13 @@ spec:
             - containerPort: 8000
           env:
             - name: MONGO_SECRET_NAME
-              value: "app-docdb-secret"
+              value: app-docdb-secret
             - name: MYSQL_SECRET_NAME
-              value: "app_rds_config"
+              value: app_rds_config
             - name: GLOBAL_BUNDLE_URL
-              value: "https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem"
+              value: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
             - name: EF_SEARCH
               value: 200
             - name: K
               value: 20
-              
+
