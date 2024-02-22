@@ -28,3 +28,10 @@ spec:
                 name: face-search-service
                 port:
                   number: 80
+          - path: /search/semantic
+            pathType: Prefix
+            backend:
+              service:
+                name: face-search-service
+                port:
+                  number: 80
