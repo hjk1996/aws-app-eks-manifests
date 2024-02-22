@@ -19,8 +19,19 @@ spec:
     spec:
       serviceAccountName: face-search-service-account
       containers:
-      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:27
-        name: face-search
-        ports:
-        - containerPort: 8000
-        
+        - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:27
+          name: face-search
+          ports:
+            - containerPort: 8000
+          env:
+            - name: MONGO_SECRET_NAME
+              value: "app-docdb-secret"
+            - name: MYSQL_SECRET_NAME
+              value: "app_rds_config"
+            - name: GLOBAL_BUNDLE_URL
+              value: "https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem"
+            - name: EF_SEARCH
+              value: 200
+            - name: K
+              value: 20
+              
