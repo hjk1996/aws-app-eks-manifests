@@ -17,15 +17,8 @@ spec:
         app: image-caption-deployment
     spec:
       serviceAccountName: image-caption-service-account
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: node.kubernetes.io/instance-type
-                operator: In
-                values:
-                - g3s.xlarge
+      nodeSelector:
+        node.kubernetes.io/instance-type: g3s.xlarge
       topologySpreadConstraints:
       - maxSkew: 1
         topologyKey: "kubernetes.io/hostname"
