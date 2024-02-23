@@ -24,11 +24,11 @@ spec:
           labelSelector:
             matchLabels:
               app: image-caption-deployment
-      tolerations:
-      - key: nvidia.com/gpu
-        operator: Equal
-        value: "true"
-        effect: NoSchedule
+      # tolerations:
+      # - key: nvidia.com/gpu
+      #   operator: Equal
+      #   value: "true"
+      #   effect: NoSchedule
       containers:
         - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:67
           name: image-caption 
