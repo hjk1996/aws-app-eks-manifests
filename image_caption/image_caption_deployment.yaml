@@ -33,9 +33,9 @@ spec:
         - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:67
           name: image-caption
           resources:
-            required:
+            requests:
               cpu: "1000m"
-              memory: "3.0Gi"
+              memory: "3000Mi"
             # limits:
             #   nvidia.com/gpu: "1"
           env:
