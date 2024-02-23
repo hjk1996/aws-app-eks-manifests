@@ -1,0 +1,19 @@
+apiVersion: karpenter.sh/v1beta1
+kind: NodePool
+metadata:
+  name: gpu
+spec:
+  disruption:
+    consolidationPolicy: WhenUnderutilized
+  template:
+    spec:
+      nodeClassRef:
+        name: default
+      requirements:
+      - key: node.kubernetes.io/instance-type
+        operator: In
+        values: ["g3s.xlarge"]
+      taints:
+      - key: nvidia.com/gpu
+        value: "true"
+        effect: NoSchedule
