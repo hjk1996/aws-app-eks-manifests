@@ -37,6 +37,7 @@ spec:
         operator: In
         values:
         - m6i.large
+        - g3s.xlarge	
       - key: karpenter.k8s.aws/instance-generation
         operator: Gt
         values:
