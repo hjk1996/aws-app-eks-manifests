@@ -30,6 +30,8 @@ spec:
               value: app-db-secret
             - name: GLOBAL_BUNDLE_URL
               value: https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem
+            - name: JWKS_URL
+              value: https://cognito-idp.us-east-1.amazonaws.com/us-east-1_4kv4854BU/.well-known/jwks.json
             - name: EF_SEARCH
               value: "200"
             - name: K
