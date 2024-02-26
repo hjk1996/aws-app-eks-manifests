@@ -19,7 +19,7 @@ spec:
     spec:
       serviceAccountName: face-search-service-account
       containers:
-        - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:55
+        - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-face-search:56
           name: face-search
           ports:
             - containerPort: 8000
