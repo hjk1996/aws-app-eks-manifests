@@ -24,7 +24,7 @@ spec:
             app: picture-backend-deployment
       serviceAccountName: picture-backend-service-account
       containers:
-      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:105
+      - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-picture-backend:106
         name: picture-backend
         envFrom:
         - secretRef:
