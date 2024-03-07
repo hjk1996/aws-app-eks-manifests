@@ -30,7 +30,7 @@ spec:
       #   value: "true"
       #   effect: NoSchedule
       containers:
-        - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:74
+        - image: 109412806537.dkr.ecr.us-east-1.amazonaws.com/app-image-caption:75
           name: image-caption
           resources:
             requests:
